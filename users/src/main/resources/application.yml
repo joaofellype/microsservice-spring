@@ -1,0 +1,17 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: user
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: QrCode
+      collection: user
+
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka/

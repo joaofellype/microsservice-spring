@@ -1,0 +1,32 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: 'pix'
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: QrCode
+      collection: pix
+  kafka:
+    producer:
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      group-id: group_id
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      bootstrap-servers: 127.0.0.1:29092
+  auto:
+    create:
+      topics:
+        enable: 'true'
+
+topic:
+  name:
+    producer: topico.comando.teste
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
+
+
