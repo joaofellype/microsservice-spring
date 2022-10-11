@@ -29,8 +29,8 @@ public class ConsumerPix {
     public void consume(ConsumerRecord<String, String> payload){
 
         ObjectMapper objectMapper = new ObjectMapper();
-        Pix pix;
         try {
+            Pix pix;
 
             pix = objectMapper.readValue(payload.value(), Pix.class);
             pixRepository.save(pix);

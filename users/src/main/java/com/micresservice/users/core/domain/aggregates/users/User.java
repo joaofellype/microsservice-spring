@@ -14,8 +14,8 @@ public class User {
         this.cpf = cpf;
     }
 
-    public static User create(String id, String name, String cpf){
-        return new User(id,name,cpf);
+    public static User create(String id, String name, String cpf) {
+        return new User(id, name, cpf);
     }
 
     public String getId() {

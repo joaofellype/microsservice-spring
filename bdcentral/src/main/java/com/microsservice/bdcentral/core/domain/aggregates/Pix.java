@@ -5,18 +5,16 @@ import java.time.LocalDateTime;
 public class Pix {
 
     private String id;
-    private String idTransaction;
-    private User userSend;
-    private Long dateTransaction;
-    private User userReceived;
-    private String value;
+    private final String idTransaction;
+    private final User userSend;
+    private final Long dateTransaction;
+    private final User userReceived;
+    private final String value;
     private String qrCode;
 
 
-    public Pix() {
-    }
 
-    public Pix(String id, String idTransaction, User userSend, Long dateTransaction, User userReceived, String value, String qrCode) {
+    private Pix(String id, String idTransaction, User userSend, Long dateTransaction, User userReceived, String value, String qrCode) {
         this.id = id;
         this.idTransaction = idTransaction;
         this.userSend = userSend;
@@ -25,7 +23,10 @@ public class Pix {
         this.value = value;
         this.qrCode = qrCode;
     }
+    public static Pix create(String id, String idTransaction, User userSend, Long dateTransaction, User userReceived, String value, String qrCode){
 
+        return new Pix(id, idTransaction, userSend, dateTransaction, userReceived, value, qrCode);
+    }
     public String getId() {
         return id;
     }
@@ -34,29 +35,12 @@ public class Pix {
         return idTransaction;
     }
 
-
     public Long getDateTransaction() {
         return dateTransaction;
     }
 
     public String getValue() {
         return value;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public void setIdTransaction(String idTransaction) {
-        this.idTransaction = idTransaction;
-    }
-
-    public void setDateTransaction(Long dateTransaction) {
-        this.dateTransaction = dateTransaction;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
     }
 
     public User getUserSend() {
@@ -71,15 +55,8 @@ public class Pix {
         this.qrCode = qrCode;
     }
 
-    public void setUserSend(User userSend) {
-        this.userSend = userSend;
-    }
 
     public User getUserReceived() {
         return userReceived;
-    }
-
-    public void setUserReceived(User userReceived) {
-        this.userReceived = userReceived;
     }
 }

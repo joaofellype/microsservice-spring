@@ -5,10 +5,8 @@ public class User {
     private String name;
     private String cpf;
 
-    public User() {
-    }
 
-    public User(String id, String name, String cpf) {
+    private User(String id, String name, String cpf) {
         this.id = id;
         this.name = name;
         this.cpf = cpf;

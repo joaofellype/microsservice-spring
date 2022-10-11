@@ -10,23 +10,24 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class UserControllerImpl extends BaseControllerImpl<UserDto> implements UserController{
+public class UserControllerImpl extends BaseControllerImpl<UserDto> implements UserController {
     @Autowired
     private UserService userService;
     @Autowired
     private GetUsersQuery getUsersQuery;
+
     @Override
     public ResponseEntity<Void> create(UserRequest userRequest) {
-        userService.create(userRequest.getId(),userRequest.getName(),userRequest.getCpf());
+        userService.create(userRequest.getId(), userRequest.getName(), userRequest.getCpf());
         return ResponseEntity.ok().build();
     }
 
     @Override
     public ResponseEntity<UserDto> findById(String id) {
         var user = userService.findById(id);
-        if(user == null) {
+        if (user == null) {
             return notFoundAggregate();
-        }else {
+        } else {
             UserDto userDto = new UserDto();
             userDto.setId(user.getId());
             userDto.setCpf(user.getCpf());

@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class UserRepositoyImpl  implements UserRepository {
+public class UserRepositoyImpl implements UserRepository {
 
     private final MongoTemplate mongoTemplate;
 
@@ -25,6 +25,6 @@ public class UserRepositoyImpl  implements UserRepository {
 
     @Override
     public User findById(String id) {
-        return mongoTemplate.findById(id,User.class,defaultCollection);
+        return mongoTemplate.findById(id, User.class, defaultCollection);
     }
 }

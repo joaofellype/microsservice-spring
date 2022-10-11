@@ -1,7 +1,9 @@
 package com.pagamento.pix.application.pix.dto;
 
 import com.pagamento.pix.application.shared.PaginateDto;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
 public class PixFilterDto {
 
     private PaginateDto paginate;
